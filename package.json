@@ -1,0 +1,18 @@
+{
+  "name": "RaspBMC",
+  "version": "0.0.0",
+  "description": "Updates the XBMC indx when a file changes.",
+  "main": "index.js",
+  "dependencies": {
+    "request": "~2.12.0",
+    "watchr": "~2.3.1",
+    "winston": "~0.6.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Howard Tyson",
+  "license": "BSD"
+}
