@@ -1,4 +1,7 @@
 {
   "_comment": "The XBMC server with http/https and a port number of appicable.",
-  "xbmcHostname": "http://192.168.1.1"
+  "xbmcHostname": "http://192.168.1.1",
+  "pathsToWatch": [
+    "/var/www"
+  ]
 }

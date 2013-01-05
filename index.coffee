@@ -1,5 +1,7 @@
 request = require 'request'
 watchr = require 'watchr'
+winston = require 'winston'
+
 options =
   'method': 'POST'
   'json':
@@ -12,15 +14,15 @@ config = require './config'
 rescanVideos = ->
   request.get "#{config.xbmcHostname}/jsonrpc", options, (error, response, body)->
     if response.statusCode is 200
-      console.log 'Indexing XBMC content started.'
+      winston.info 'Indexing XBMC content started.'
     else
-      console.log 'Request to index XBMC content failed.', error
+      winston.error 'Request to index XBMC content failed.', error
 
 watchr.watch
-  paths: [ '.' ]
+  paths: config.pathsToWatch
   listeners:
     change: (changeType, filePath, fileCurrentStat, filePreviousStat)->
-      console.log "An #{changeType} occured on #{filePath}."
+      winston.info "An #{changeType} occured on #{filePath}."
       rescanVideos()
   next: (err,watchers)->
-    console.log 'Watching for all our paths has completed.'
+    winston.info 'Watching for all our paths has completed.'
