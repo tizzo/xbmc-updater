@@ -4,5 +4,10 @@
   "_comment": "An array of paths to watch for new content.",
   "pathsToWatch": [
     "/home/SomeUser/media"
+  ],
+  "_comment": "An array fo file extensions to exclude from triggering a scan",
+  "fileTypesToExclude": [
+    "nfo",
+    "tbn"
   ]
 }

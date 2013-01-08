@@ -22,7 +22,12 @@ watchr.watch
   paths: config.pathsToWatch
   listeners:
     change: (changeType, filePath, fileCurrentStat, filePreviousStat)->
-      winston.info "An #{changeType} occured on #{filePath}."
-      rescanVideos()
+      skip = false
+      for type in config.fileTypesToExclude
+        if filePath.search(".#{type}") != -1
+          skip = true
+      if not skip
+        winston.info "An #{changeType} occured on #{filePath}."
+        rescanVideos()
   next: (err,watchers)->
-    winston.info 'Watching for all our paths has completed.'
+    winston.info "#{config.pathsToWatch.join(', ')} now watched for changes."
