@@ -8,8 +8,9 @@ I decided the simplest thing for my setup was to have a separate process watch t
 
   1. Download and install [node.js](http://nodejs.org).
   2. Install coffee-script (`npm install -g coffee-script`).
-  3. Copy `example.config.json` to `config.json` and edit to taste
-  4. Run using `coffee index.coffee`
+  3. cd into the project directory and install the dependencies (`npm install`)
+  4. Copy `example.config.json` to `config.json` and edit to taste
+  5. Run using `coffee index.coffee`
 
 ## Deploy
 
