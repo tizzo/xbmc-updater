@@ -1,8 +1,8 @@
-# XBMC Content Watcher and Updater
+# XBMC File Watcher and Scan Triggerer
 
 While running XBMC on the [Raspberry Pi](http://www.raspberrypi.org) (using the excellent [RaspBMC](http://www.raspbmc.com) distribution) I had some issues using the [plugins](http://wiki.xbmc.org/index.php?title=Add-on:Library_watchdog) [available](http://wiki.xbmc.org/index.php?title=Add-on:XBMC_Library_Auto_Update) to scan network shares for new content due to resource constraints and instability.
 
-I decided the simplest thing for my setup was to have a separate process watch the directory on the system that shares the files and to have that system notify XBMC of new available files.
+I decided the simplest thing for my setup was to have a separate process watch the directory on the system that shares the files and to have that system trigger XBMC to re-scan for new videos via the [JSON API](http://wiki.xbmc.org/index.php?title=JSON-RPC_API).
 
 ## Installation
 
